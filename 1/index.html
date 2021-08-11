@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="Egor Fedotov">
+	<meta name="description" content="My first homework in SENLA">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My first task</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+			<h1>html document</h1>
+			<hr>
+			<nav>
+				<ul>
+					<li><a href="#">html structure</a></li>
+					<li><a href="#">inputs</a></li>
+					<li><a href="#">table</a></li>
+				</ul>
+			</nav>
+			<hr>
+		</header>
+		<main>
+			<section>
+				<h2>first section</h2>
+				<p>
+					<b>Lorem ipsum</b> dolor sit amet consectetur, <br> 
+					adipisicing elit. Ea a, <i>voluptatum illo</i> vero nihil enim, <br> 
+					harum incidunt deserunt voluptates cupiditate provident sint! <br>
+					Officiis amet nesciunt consectetur odio, debitis deleniti sapiente?
+				</p>
+			</section>
+			<section>
+				<h3>section 2</h3>
+				<div>
+					<form action="#" method="POST">
+						<select name="num" >
+							<option disabled>Select numbers</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+						<input type="submit" value="send">
+					</form>
+				</div>
+				<fieldset>
+					<legend>Registration</legend>
+					<form action="#" method="GET">
+						<label for="firstname">Enter name</label>
+						<input type="text" id="firstname" placeholder="Ivan" name="fname">
+						<label for="lastname">Enter lastname</label>
+						<input type="text" id="lastname" placeholder="Ivanov" name="lname">
+						<br>
+						<br>
+						<span>Gender</span>
+						<label for="man">man</label>
+						<input type="radio" id="man" name="gen" checked>
+						<label for="woman">woman</label>
+						<input type="radio" id="woman" name="gen">
+						<br>
+						<br>
+						<label for="age">age</label>
+						<input type="date" id="age" name="age">
+						<br>
+						<br>
+						<label for="descr">Tell us about yourself</label><br>
+						<textarea name="descr" id="descr" cols="30" rows="10" placeholder="Write here"></textarea>
+						<br>
+						<br>
+						<input type="submit" value="Send">
+					</form>
+				</fieldset>
+				<br>
+			</section>
+		</main>
+		<footer>
+			<table border="1" cellspacing="0" cellpadding="3">
+				<tr>
+					<td>&nbsp;</td>
+					<th>M. Viedo</th>
+					<th>Eldorado</th>
+					<th>DNS</th>
+					<th>Our store</th>
+				</tr>
+				<tr>
+					<th>online order</th>
+					<td>+</td>
+					<td>-</td>
+					<td>+</td>
+					<td>+</td>
+				</tr>
+				<tr>
+					<th>Delivery</th>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+					<td>+ free</td>
+				</tr>
+				<tr>
+					<th>guarantee</th>
+					<td>+</td>
+					<td>+</td>
+					<td>+</td>
+					<td>+ 2 years</td>
+				</tr>
+				<tr>
+					<th>Discounts</th>
+					<td>-</td>
+					<td>-</td>
+					<td>+</td>
+					<td>+ 20% all clients</td>
+				</tr>
+			</table>
+			<br>
+			<br>
+			<figure>
+				<img src="cat.png" alt="cat">
+				<figcaption>A little cat asks you to smile</figcaption>
+			</figure>
+		</footer>
+</body>
+</html>
