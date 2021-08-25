@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	  <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
     <meta name="author" content="Egor Fedotov" />
     <meta name="description" content="My first homework in SENLA" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,142 +10,221 @@
   </head>
   <body>
     <header class="header">
-		 <div class="container">
-       <h1 class="header-tittle">html document</h1>
-       <nav class="nav">
-         <ul class="nav-list">
-           <li class="nav-list_link"><a href="#">html structure</a></li>
-           <li class="nav-list_link"><a href="#">inputs</a></li>
-           <li class="nav-list_link"><a href="#">table</a></li>
-         </ul>
-       </nav>
-		</div>
+      <div class="container">
+        <h1 class="header-tittle">html document</h1>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-list_link"><a href="#">html structure</a></li>
+            <li class="nav-list_link"><a href="#">inputs</a></li>
+            <li class="nav-list_link"><a href="#">table</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
       <section class="first-section">
-				<div class="container">
-        	<h2 class="section-tittle">first section</h2>
-        	<p class="first-section_text">
-          	<b>Lorem ipsum</b> dolor sit amet consectetur, 
-          	adipisicing elit. Ea a, <i>voluptatum illo</i> vero nihil enim, 
-          	harum incidunt deserunt voluptates cupiditate provident sint! 
-          	Officiis amet nesciunt consectetur odio, debitis deleniti sapiente?
-						<b>Lorem ipsum</b> dolor sit amet consectetur, 
-          	adipisicing elit. Ea a, <i>voluptatum illo</i> vero nihil enim, 
-          	harum incidunt deserunt voluptates cupiditate provident sint! 
-          	Officiis amet nesciunt consectetur odio, debitis deleniti sapiente?
-						<b>Lorem ipsum</b> dolor sit amet consectetur, 
-          	adipisicing elit. Ea a, <i>voluptatum illo</i> vero nihil enim, 
-          	harum incidunt deserunt voluptates cupiditate provident sint! 
-          	Officiis amet nesciunt consectetur odio, debitis deleniti sapiente?
-						<b>Lorem ipsum</b> dolor sit amet consectetur, 
-          	adipisicing elit. Ea a, <i>voluptatum illo</i> vero nihil enim, 
-          	harum incidunt deserunt voluptates cupiditate provident sint! 
-          	Officiis amet nesciunt consectetur odio, debitis deleniti sapiente?
-        	</p>
-				</div>
+        <div class="container">
+          <h2 class="section-tittle">first section</h2>
+          <p class="first-section_text">
+            <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit. Ea
+            a, <i>voluptatum illo</i> vero nihil enim, harum incidunt deserunt
+            voluptates cupiditate provident sint! Officiis amet nesciunt
+            consectetur odio, debitis deleniti sapiente?
+            <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit. Ea
+            a, <i>voluptatum illo</i> vero nihil enim, harum incidunt deserunt
+            voluptates cupiditate provident sint! Officiis amet nesciunt
+            consectetur odio, debitis deleniti sapiente?
+            <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit. Ea
+            a, <i>voluptatum illo</i> vero nihil enim, harum incidunt deserunt
+            voluptates cupiditate provident sint! Officiis amet nesciunt
+            consectetur odio, debitis deleniti sapiente?
+            <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit. Ea
+            a, <i>voluptatum illo</i> vero nihil enim, harum incidunt deserunt
+            voluptates cupiditate provident sint! Officiis amet nesciunt
+            consectetur odio, debitis deleniti sapiente?
+          </p>
+        </div>
       </section>
       <section class="second-section">
-				<div class="container">
-					<h3 class="section-tittle">second section</h3>
-					<form class="form" action="#" method="GET">
-						<fieldset class="form-wrapper">
-							<legend class="form-tittle">Registration</legend>
-							<label class="input-tittle" class="input-tittle" for="firstname">Enter name</label>
-							<input class="input input_text" type="text" id="firstname" placeholder="Ivan" name="fname" />
-							<label class="input-tittle" for="lastname">Enter lastname</label>
-							<input class="input input_text" type="text" id="lastname" placeholder="Ivanov" name="lname"/>
-							<label class="input-tittle" for="email">Your email</label>
-							<input class="input input_text" type="email" id="email" placeholder="ivanov@email.ru" />
-							<label class="input-tittle" for="tel">Your telephone</label>
-							<input class="input input_text" type="tel" id="tel" placeholder="+7 XXX XXX XX XX" />
-							<input class="button" type="submit" value="Send" />
-						</fieldset>
-						<fieldset class="form-wrapper">
-							<legend>Other information</legend>
-							<label class="input-tittle" for="color">Choose a color</label>
-							<input class="input" type="color" id="color" />
-							<label class="input-tittle" for="num">How many people are on your team</label>
-							<input class="input" type="number" id="num" />
-							<label class="input-tittle" for="range">Move the slider, it's cool</label>
-							<input class="input" type="range" id="range" min="0" max="123" step="1" />
-							<label class="input-tittle">Gender</label>
-							<label class="input-tittle" for="man">man</label>
-							<input class="input" type="radio" id="man" name="gen" checked />
-							<label class="input-tittle" for="woman">woman</label>
-							<input class="input" type="radio" id="woman" name="gen" />
-							<label class="input-tittle" for="num">Select number</label>
-							<select class="input" id="num" name="num">
-								<option disabled>Select numbers</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-							</select>
-							<label class="input-tittle" for="age">age</label>
-							<input class="input" type="date" id="age" name="age" />
-							<div>
-								<label class="input-tittle">Choose your favorite movie universes</label>
-								<label class="input-tittle" for="Marvel"><input class="input" id="Marvel" type="checkbox" value="Marvel" name="Marvel" checked>Marvel</label>
-								<label class="input-tittle" for="DC"><input class="input" id="DC" type="checkbox" value="DC" name="DC">DC</label>
-								<label class="input-tittle" for="Star wars"><input class="input" id="Star wars" type="checkbox" value="Star wars" name="Star wars">Star wars</label>
-								<label class="input-tittle" for="Don't like"><input class="input" id="Don't like" type="checkbox" value="Don't like" name="Don't like">Don't like</label>
-							</div>
-							<label class="input-tittle" for="descr">Tell us about yourself</label><br />
-							<textarea class="textarea" name="descr" id="descr" placeholder="Write here"></textarea>
-							<input class="button" class="input" type="reset" value="reset" />
-							<input class="button" class="input" type="submit" value="Send" />
-						</fieldset>	
-					</form>
-					<br />
-			</div>
+        <div class="container">
+          <h3 class="section-tittle">second section</h3>
+          <form class="form" action="#" method="GET">
+            <fieldset class="form-wrapper">
+              <legend class="form-tittle">Registration</legend>
+              <label class="input-tittle" class="input-tittle" for="firstname"
+                >Enter name</label
+              >
+              <input
+                class="input input_text"
+                type="text"
+                id="firstname"
+                placeholder="Ivan"
+                name="fname"
+              />
+              <label class="input-tittle" for="lastname">Enter lastname</label>
+              <input
+                class="input input_text"
+                type="text"
+                id="lastname"
+                placeholder="Ivanov"
+                name="lname"
+              />
+              <label class="input-tittle" for="email">Your email</label>
+              <input
+                class="input input_text"
+                type="email"
+                id="email"
+                placeholder="ivanov@email.ru"
+              />
+              <label class="input-tittle" for="tel">Your telephone</label>
+              <input
+                class="input input_text"
+                type="tel"
+                id="tel"
+                placeholder="+7 XXX XXX XX XX"
+              />
+              <input class="button" type="submit" value="Send" />
+            </fieldset>
+            <fieldset class="form-wrapper">
+              <legend>Other information</legend>
+              <label class="input-tittle" for="color">Choose a color</label>
+              <input class="input" type="color" id="color" />
+              <label class="input-tittle" for="num"
+                >How many people are on your team</label
+              >
+              <input class="input" type="number" id="num" />
+              <label class="input-tittle" for="range"
+                >Move the slider, it's cool</label
+              >
+              <input
+                class="input"
+                type="range"
+                id="range"
+                min="0"
+                max="123"
+                step="1"
+              />
+              <label class="input-tittle">Gender</label>
+              <label class="input-tittle" for="man">man</label>
+              <input class="input" type="radio" id="man" name="gen" checked />
+              <label class="input-tittle" for="woman">woman</label>
+              <input class="input" type="radio" id="woman" name="gen" />
+              <label class="input-tittle" for="num">Select number</label>
+              <select class="input" id="num" name="num">
+                <option disabled>Select numbers</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+              <label class="input-tittle" for="age">age</label>
+              <input class="input" type="date" id="age" name="age" />
+              <div>
+                <label class="input-tittle"
+                  >Choose your favorite movie universes</label
+                >
+                <label class="input-tittle" for="Marvel"
+                  ><input
+                    class="input"
+                    id="Marvel"
+                    type="checkbox"
+                    value="Marvel"
+                    name="Marvel"
+                    checked
+                  />Marvel</label
+                >
+                <label class="input-tittle" for="DC"
+                  ><input
+                    class="input"
+                    id="DC"
+                    type="checkbox"
+                    value="DC"
+                    name="DC"
+                  />DC</label
+                >
+                <label class="input-tittle" for="Star wars"
+                  ><input
+                    class="input"
+                    id="Star wars"
+                    type="checkbox"
+                    value="Star wars"
+                    name="Star wars"
+                  />Star wars</label
+                >
+                <label class="input-tittle" for="Don't like"
+                  ><input
+                    class="input"
+                    id="Don't like"
+                    type="checkbox"
+                    value="Don't like"
+                    name="Don't like"
+                  />Don't like</label
+                >
+              </div>
+              <label class="input-tittle" for="descr"
+                >Tell us about yourself</label
+              ><br />
+              <textarea
+                class="textarea"
+                name="descr"
+                id="descr"
+                placeholder="Write here"
+              ></textarea>
+              <input class="button" class="input" type="reset" value="reset" />
+              <input class="button" class="input" type="submit" value="Send" />
+            </fieldset>
+          </form>
+          <br />
+        </div>
       </section>
     </main>
     <footer>
-			<div class="container">
-				<table class="table">
-					<tr>
-						<td>&nbsp;</td>
-						<th>M. Viedo</th>
-						<th>Eldorado</th>
-						<th>DNS</th>
-						<th>Our store</th>
-					</tr>
-					<tr>
-						<th>online order</th>
-						<td>+</td>
-						<td>-</td>
-						<td>+</td>
-						<td>+</td>
-					</tr>
-					<tr>
-						<th>Delivery</th>
-						<td>-</td>
-						<td>-</td>
-						<td>-</td>
-						<td>+ free</td>
-					</tr>
-					<tr>
-						<th>guarantee</th>
-						<td>+</td>
-						<td>+</td>
-						<td>+</td>
-						<td>+ 2 years</td>
-					</tr>
-					<tr>
-						<th>Discounts</th>
-						<td>-</td>
-						<td>-</td>
-						<td>+</td>
-						<td>+ 20% all clients</td>
-					</tr>
-				</table>
-				<br />
-				<br />
-				<figure class="img-wrapper">
-					<img class="img" src="cat.png" alt="cat" />
-					<figcaption class="img-tittle">A little cat asks you to smile</figcaption>
-				</figure>
-			</div>
+      <div class="container">
+        <table class="table">
+          <tr>
+            <td>&nbsp;</td>
+            <th>M. Viedo</th>
+            <th>Eldorado</th>
+            <th>DNS</th>
+            <th>Our store</th>
+          </tr>
+          <tr>
+            <th>online order</th>
+            <td>+</td>
+            <td>-</td>
+            <td>+</td>
+            <td>+</td>
+          </tr>
+          <tr>
+            <th>Delivery</th>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>+ free</td>
+          </tr>
+          <tr>
+            <th>guarantee</th>
+            <td>+</td>
+            <td>+</td>
+            <td>+</td>
+            <td>+ 2 years</td>
+          </tr>
+          <tr>
+            <th>Discounts</th>
+            <td>-</td>
+            <td>-</td>
+            <td>+</td>
+            <td>+ 20% all clients</td>
+          </tr>
+        </table>
+        <br />
+        <br />
+        <figure class="img-wrapper">
+          <img class="img" src="cat.png" alt="cat" />
+          <figcaption class="img-tittle">
+            A little cat asks you to smile
+          </figcaption>
+        </figure>
+      </div>
     </footer>
   </body>
 </html>
