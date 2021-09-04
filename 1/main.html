@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table layout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <table class="table_main">
+    <tr>
+      <td  colspan="3">
+        <header class="main-header">
+          <h1 class="header-tittle">header tittle</h1>
+          <ul class="nav-list">
+            <li class="nav-list_link">1</li>
+            <li class="nav-list_link">2</li>
+            <li class="nav-list_link">3</li>
+          </ul>
+        </header>
+      </td>
+      <td rowspan="6" class="nav-main">
+        <nav>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit deleniti blanditiis quae molestiae praesentium distinctio sit ducimus ea repellat sequi asperiores in doloribus, error voluptatibus iure, quo labore unde aperiam.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima inventore enim in accusamus corporis voluptate expedita minus quaerat iure quasi! Eligendi vel consequatur sint tempore harum, distinctio minus reprehenderit suscipit!</nav>
+      </td>
+    </tr>
+    <tr>
+      <td class="aside">advertisement</td>
+      <td colspan="2" rowspan="5">
+        <main class="main">
+          <section class="first-section">
+            <h2 class="section-tittle">first section</h2>
+            <p class="first-section_text">
+              <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit. Ea
+              a, <i>voluptatum illo</i> vero nihil enim, harum incidunt deserunt
+              voluptates cupiditate provident sint! Officiis amet nesciunt
+              consectetur odio, debitis deleniti sapiente?
+              <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit. Ea
+              a, <i>voluptatum illo</i> vero nihil enim, harum incidunt deserunt
+              voluptates cupiditate provident sint! Officiis amet nesciunt
+              consectetur odio, debitis deleniti sapiente?
+              <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit. Ea
+              a, <i>voluptatum illo</i> vero nihil enim, harum incidunt deserunt
+              voluptates cupiditate provident sint! Officiis amet nesciunt
+              consectetur odio, debitis deleniti sapiente?
+              <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit. Ea
+              a, <i>voluptatum illo</i> vero nihil enim, harum incidunt deserunt
+              voluptates cupiditate provident sint! Officiis amet nesciunt
+              consectetur odio, debitis deleniti sapiente?
+            </p>
+          </section>
+          <section class="second-section">
+            <h3 class="section-tittle">second section</h3>
+            <form class="form" action="#" method="GET">
+              <fieldset class="form-wrapper form-wrapper_left">
+                <legend class="form-tittle">Registration</legend>
+                <label class="input-tittle" class="input-tittle" for="firstname"
+                  >Enter name</label
+                >
+                <input
+                  class="input input_text"
+                  type="text"
+                  id="firstname"
+                  placeholder="Ivan"
+                  name="fname"
+                />
+                <label class="input-tittle" for="lastname">Enter lastname</label>
+                <input
+                  class="input input_text"
+                  type="text"
+                  id="lastname"
+                  placeholder="Ivanov"
+                  name="lname"
+                />
+                <label class="input-tittle" for="email">Your email</label>
+                <input
+                  class="input input_text"
+                  type="email"
+                  id="email"
+                  placeholder="ivanov@email.ru"
+                />
+                <label class="input-tittle" for="tel">Your telephone</label>
+                <input
+                  class="input input_text"
+                  type="tel"
+                  id="tel"
+                  placeholder="+7 XXX XXX XX XX"
+                />
+                <input class="button" type="submit" value="Send" />
+              </fieldset>
+              <fieldset class="form-wrapper form-wrapper_center">
+                <legend>Other information</legend>
+                <label class="input-tittle" for="color">Choose a color</label>
+                <input class="input" type="color" id="color" />
+                <label class="input-tittle" for="num"
+                  >How many people are on your team</label
+                >
+                <input class="input" type="number" id="num" />
+                <label class="input-tittle" for="range"
+                  >Move the slider, it's cool</label
+                >
+                <input
+                  class="input"
+                  type="range"
+                  id="range"
+                  min="0"
+                  max="123"
+                  step="1"
+                />
+                <label class="input-tittle">Gender</label>
+                <label class="input-tittle" for="man">man</label>
+                <input class="input" type="radio" id="man" name="gen" checked />
+                <label class="input-tittle" for="woman">woman</label>
+                <input class="input" type="radio" id="woman" name="gen" />
+                <label class="input-tittle" for="num">Select number</label>
+                <select class="input" id="num" name="num">
+                  <option disabled>Select numbers</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+                <label class="input-tittle" for="age">age</label>
+                <input class="input" type="date" id="age" name="age" />
+              </fieldset>
+              <fieldset class="form-wrapper form-wrapper_right">
+                <legend>More other information</legend>
+                <label class="input-tittle"
+                  >Choose your favorite movie universes</label
+                >
+                <label class="input-tittle" for="Marvel"
+                  ><input
+                    class="input"
+                    id="Marvel"
+                    type="checkbox"
+                    value="Marvel"
+                    name="Marvel"
+                    checked
+                  />Marvel</label
+                >
+                <label class="input-tittle" for="DC"
+                  ><input
+                    class="input"
+                    id="DC"
+                    type="checkbox"
+                    value="DC"
+                    name="DC"
+                  />DC</label
+                >
+                <label class="input-tittle" for="Star wars"
+                  ><input
+                    class="input"
+                    id="Star wars"
+                    type="checkbox"
+                    value="Star wars"
+                    name="Star wars"
+                  />Star wars</label
+                >
+                <label class="input-tittle" for="Don't like"
+                  ><input
+                    class="input"
+                    id="Don't like"
+                    type="checkbox"
+                    value="Don't like"
+                    name="Don't like"
+                  />Don't like</label
+                >
+                <label class="input-tittle" for="descr"
+                  >Tell us about yourself</label
+                >
+                <textarea
+                  class="textarea"
+                  name="descr"
+                  id="descr"
+                  placeholder="Write here"
+                ></textarea>
+                <input class="button" class="input" type="reset" value="reset" />
+                <input class="button" class="input" type="submit" value="Send" />
+              </fieldset>
+            </form>
+          </section>
+        </main>
+      </td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td  class="aside">advertisement</td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td class="aside">advertisement</td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <footer>
+          <h3 class="footer-tittle">Footer tittle</h3>
+          <table class="table">
+            <tr>
+              <td>&nbsp;</td>
+              <th>M. Viedo</th>
+              <th>Eldorado</th>
+              <th>DNS</th>
+              <th>Our store</th>
+            </tr>
+            <tr>
+              <th>online order</th>
+              <td>+</td>
+              <td>-</td>
+              <td>+</td>
+              <td>+</td>
+            </tr>
+            <tr>
+              <th>Delivery</th>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>+ free</td>
+            </tr>
+            <tr>
+              <th>guarantee</th>
+              <td>+</td>
+              <td>+</td>
+              <td>+</td>
+              <td>+ 2 years</td>
+            </tr>
+            <tr>
+              <th>Discounts</th>
+              <td>-</td>
+              <td>-</td>
+              <td>+</td>
+              <td>+ 20% all clients</td>
+            </tr>
+          </table>
+          <figure class="img-wrapper">
+            <img class="img" src="cat.png" alt="cat" />
+            <figcaption class="img-tittle">
+              A little cat asks you to smile
+            </figcaption>
+          </figure>
+        </footer>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

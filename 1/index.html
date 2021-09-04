@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="container">
+    <div class="grid-container">
+      <header class="header">
         <h1 class="header-tittle">html document</h1>
         <nav class="nav">
           <ul class="nav-list">
@@ -19,11 +19,9 @@
             <li class="nav-list_link"><a href="#">table</a></li>
           </ul>
         </nav>
-      </div>
-    </header>
-    <main>
-      <section class="first-section">
-        <div class="container">
+      </header>
+      <main class="main">
+        <section class="first-section">
           <h2 class="section-tittle">first section</h2>
           <p class="first-section_text">
             <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit. Ea
@@ -43,13 +41,11 @@
             voluptates cupiditate provident sint! Officiis amet nesciunt
             consectetur odio, debitis deleniti sapiente?
           </p>
-        </div>
-      </section>
-      <section class="second-section">
-        <div class="container">
+        </section>
+        <section class="second-section">
           <h3 class="section-tittle">second section</h3>
           <form class="form" action="#" method="GET">
-            <fieldset class="form-wrapper">
+            <fieldset class="form-wrapper form-wrapper_left">
               <legend class="form-tittle">Registration</legend>
               <label class="input-tittle" class="input-tittle" for="firstname"
                 >Enter name</label
@@ -85,7 +81,7 @@
               />
               <input class="button" type="submit" value="Send" />
             </fieldset>
-            <fieldset class="form-wrapper">
+            <fieldset class="form-wrapper form-wrapper_center">
               <legend>Other information</legend>
               <label class="input-tittle" for="color">Choose a color</label>
               <input class="input" type="color" id="color" />
@@ -118,51 +114,52 @@
               </select>
               <label class="input-tittle" for="age">age</label>
               <input class="input" type="date" id="age" name="age" />
-              <div>
-                <label class="input-tittle"
-                  >Choose your favorite movie universes</label
-                >
-                <label class="input-tittle" for="Marvel"
-                  ><input
-                    class="input"
-                    id="Marvel"
-                    type="checkbox"
-                    value="Marvel"
-                    name="Marvel"
-                    checked
-                  />Marvel</label
-                >
-                <label class="input-tittle" for="DC"
-                  ><input
-                    class="input"
-                    id="DC"
-                    type="checkbox"
-                    value="DC"
-                    name="DC"
-                  />DC</label
-                >
-                <label class="input-tittle" for="Star wars"
-                  ><input
-                    class="input"
-                    id="Star wars"
-                    type="checkbox"
-                    value="Star wars"
-                    name="Star wars"
-                  />Star wars</label
-                >
-                <label class="input-tittle" for="Don't like"
-                  ><input
-                    class="input"
-                    id="Don't like"
-                    type="checkbox"
-                    value="Don't like"
-                    name="Don't like"
-                  />Don't like</label
-                >
-              </div>
+            </fieldset>
+            <fieldset class="form-wrapper form-wrapper_right">
+              <legend>More other information</legend>
+              <label class="input-tittle"
+                >Choose your favorite movie universes</label
+              >
+              <label class="input-tittle" for="Marvel"
+                ><input
+                  class="input"
+                  id="Marvel"
+                  type="checkbox"
+                  value="Marvel"
+                  name="Marvel"
+                  checked
+                />Marvel</label
+              >
+              <label class="input-tittle" for="DC"
+                ><input
+                  class="input"
+                  id="DC"
+                  type="checkbox"
+                  value="DC"
+                  name="DC"
+                />DC</label
+              >
+              <label class="input-tittle" for="Star wars"
+                ><input
+                  class="input"
+                  id="Star wars"
+                  type="checkbox"
+                  value="Star wars"
+                  name="Star wars"
+                />Star wars</label
+              >
+              <label class="input-tittle" for="Don't like"
+                ><input
+                  class="input"
+                  id="Don't like"
+                  type="checkbox"
+                  value="Don't like"
+                  name="Don't like"
+                />Don't like</label
+              >
               <label class="input-tittle" for="descr"
                 >Tell us about yourself</label
-              ><br />
+              >
               <textarea
                 class="textarea"
                 name="descr"
@@ -173,12 +170,10 @@
               <input class="button" class="input" type="submit" value="Send" />
             </fieldset>
           </form>
-          <br />
-        </div>
-      </section>
-    </main>
-    <footer>
-      <div class="container">
+        </section>
+      </main>
+      <footer class="footer">
+        <h3 class="footer-tittle">Footer tittle</h3>
         <table class="table">
           <tr>
             <td>&nbsp;</td>
@@ -216,15 +211,13 @@
             <td>+ 20% all clients</td>
           </tr>
         </table>
-        <br />
-        <br />
         <figure class="img-wrapper">
           <img class="img" src="cat.png" alt="cat" />
           <figcaption class="img-tittle">
             A little cat asks you to smile
           </figcaption>
         </figure>
-      </div>
-    </footer>
+      </footer>
+    </div>
   </body>
 </html>
