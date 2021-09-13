@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My first task</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
   </head>
   <body>
     <div class="grid-container">
@@ -172,6 +173,18 @@
           </form>
         </section>
       </main>
+      <aside class="aside-index">
+        Lorem ipsum dolor sit amet consectetur 
+        adipisicing elit. Earum nisi sequi, neque 
+        omnis eum iste laudantium eius. Eveniet doloremque, 
+        temporibus minus odio delectus natus quisquam cupiditate 
+        hic tempora aspernatur alias?
+
+        <p class="test-js">
+          You wanna play a game?
+        </p>
+        <button class="test-js-button">Click me</button>
+      </aside>
       <footer class="footer">
         <h3 class="footer-tittle">Footer tittle</h3>
         <table class="table">
@@ -219,5 +232,41 @@
         </figure>
       </footer>
     </div>
+    <script>
+      let p = document.querySelector('.test-js');
+      console.log(p)
+
+      let title = document.querySelector('.header-tittle')
+
+      let input = document.querySelectorAll('input')
+
+      let colorfun = function () {
+        p.setAttribute('style','background-color: green')
+      }
+
+      let colorfun1 = function () {
+        p.setAttribute('style', 'background-color: red')
+      }
+
+
+      p.addEventListener('mouseover', colorfun)
+      p.addEventListener('mouseout', colorfun1)
+
+      title.addEventListener('click', () => {
+        title.textContent = "new title header"
+        p.removeEventListener('mouseout', colorfun1)
+      })
+
+      
+
+      for (let i=0; i < input.length; i++) {
+        input[i].addEventListener("focusin", () => input[i].classList.add('focus'));
+      }
+
+
+      for (let i=0; i < input.length; i++) {
+        input[i].addEventListener("focusout", () => input[i].classList.remove('focus'));
+      }
+    </script>
   </body>
 </html>
