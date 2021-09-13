@@ -17,7 +17,8 @@ html {
 .header {
   max-width: 100%;
   grid-area: header;
-  grid-column: 1/4;
+  grid-column: 1/3;
+  grid-row: 1/2;
   position: sticky;
   top: 0;
   background-color: #fff;
@@ -29,7 +30,32 @@ html {
 }
 
 .main {
+  display: grid;
   grid-area: main;
+  grid-column: 1/3;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "second-sect first-sect";
+}
+
+.first-section {
+  grid-area: first-sect;
+  grid-column: 2/3;
+  width: 100%;
+}
+
+.second-section {
+  grid-area: second-sect;
+  grid-column: 1/2;
+}
+
+.aside-index {
+  grid-area: aside;
+  grid-column: 3/4;
+  padding: 10px;
+  max-height: 100%;
+  overflow: hidden;
 }
 
 .footer {
@@ -45,8 +71,8 @@ html {
   grid-template-rows: auto;
   gap: 20px;
   grid-template-areas: 
-    "header header headr"
-    "main main main"
+    "heder header aside"
+    "main main ."
     "footer footer footer";
 }
 
@@ -135,16 +161,40 @@ html {
   max-width: 100%;
   margin-top: 20px;
   display: grid;
-  grid-template-columns: 300px 1fr 300px;
   grid-template-rows: auto;
   gap: 20px;
   grid-template-areas: 
-    "form-wrapper_left form-wrapper_center form-wrapper_right";
+    "form-wrapper_left"
+    "form-wrapper_center"
+    "form-wrapper_right";
 }
 
 @media (max-width: 980px) {
+  .header {
+    grid-column: 1/4;
+  }
   .grid-container{
     min-width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    grid-template-areas: 
+    "heder"
+    "main"
+    "aside"
+    "footer";    
+  }
+
+  .main{
+    grid-column: 1/4;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "first-sect"
+      "second-sect";
+  }
+
+  .second-section{
+    grid-column: 1/4;
   }
   .form {
     grid-template-columns: 1fr;
@@ -152,6 +202,14 @@ html {
       "form-wrapper_left"
       "form-wrapper_center"
       "form-wrapper_right";
+  }
+
+  .aside-index {
+    grid-column: 1/4;
+  }
+
+  .footer {
+    grid-column: 1/4;
   }
 }
 
@@ -284,3 +342,6 @@ th {
   background-color: rgb(78, 248, 149);
 }
 
+.focus {
+  border: 3px solid red;
+}
