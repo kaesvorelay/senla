@@ -57,11 +57,21 @@ for (let i=0; i < input.length; i++) {
 }
 
 class User {
-  constructor(firstName, lastName, email, tel){
-      this.firstName = firstName;
-      this.lastName = lastName;
-      this.email = email;
-      this.tel = tel;
+  constructor(...arg){
+      this.firstName = arg[0];
+      this.lastName = arg[1];
+      this.email = arg[2];
+      this.tel = arg[3];
+  }
+
+  [Symbol.iterator] = function* () {
+    for (let i in this) {
+      yield this[i];
+    }
+  }
+
+  sayHello() {
+    return `${this.firstName} ${this.lastName}`
   }
 }
 
@@ -78,23 +88,123 @@ class UserList {
 let btnReg = document.querySelector('#btn');
 let userList = new UserList();
 
+class AnotherUser extends User {
+  constructor(...arg){
+    super(...arg)
+  }
+  hello(){
+    console.log(`Greetings ${super.sayHello()}`)
+  }
+}
+
 btnReg.addEventListener('click', function(e) {
   e.preventDefault();
   let firstName = document.querySelector('#firstname').value;
   let lastName = document.querySelector('#lastname').value;
   let email = document.querySelector('#email').value;
   let tel = document.querySelector('#tel').value;
+  debugger;
 
-  let user = new User(firstName, lastName, email, tel);
+  let arrayUser = [firstName, lastName, email, tel]
+
+  let user = new AnotherUser(...arrayUser);
+
+  window.user = user;
 
   userList.addUser(user);
-
+  user.hello();
   getAllUsers();
+
+  
+  let d = new Date();
+  d.setTime(d.getTime() + (60 * 1000));
+  let expires = d.toUTCString();
+  document.cookie = `email=${email}; expires=${expires}; path=/`;
 })
 
-function getAllUsers() {
-  for (let i = 0; i < userList.users.length; i++) {
+let i;
+
+function getAllUsers(i=0) {
+  for (; i < userList.users.length; i++) {
     console.log(userList.getAllinfo.call(userList.users[i]));
   }
 };
+
+let timer = setInterval(() => {
+  let {firstName} = user;
+  if (firstName) {
+    console.log(`Hello, ${firstName}`);
+    clearInterval(timer);
+  }
+}, 1000)
+
+// timer();
+
+
+let reset = document.querySelector('#reset');
+
+reset.addEventListener('click',function(e){
+  e.preventDefault();
+  let d = new Date();
+  d.setTime(d.getTime() - (60 * 1000));
+  let expires = d.toUTCString();
+  document.cookie = `email=${email}; expires=${expires}; path=/`;
+})
+
+if(localStorage.getItem('background') == 'red') {
+  document.querySelector('.header').setAttribute('style','background: red');
+} else if(localStorage.getItem('background') == 'yellow'){
+  document.querySelector('.header').setAttribute('style','background: yellow');
+} else if (localStorage.getItem('background') == 'green'){
+  document.querySelector('.header').setAttribute('style','background: green');
+} else if (localStorage.getItem('background') == null) {
+  document.querySelector('.header').setAttribute('style','background: #fff');
+}
+
+let b_red = document.querySelector('#background-red');
+let b_yellow = document.querySelector('#background-yellow');
+let b_green = document.querySelector('#background-green');
+let b_clear = document.querySelector('#clear-background');
+
+b_red.addEventListener('click', (e) => {
+  e.preventDefault();
+  if(localStorage.getItem('bacground')!== "red") {
+    localStorage.clear();
+    localStorage.setItem('background', 'red');
+    sessionStorage.setItem('background', 'red');
+    document.querySelector('.header').setAttribute('style','background: red')
+  }
+
+});
+
+b_yellow.addEventListener('click', (e) => {
+  e.preventDefault();
+  if(localStorage.getItem('bacground')!== "yellow") {
+    localStorage.clear();
+    localStorage.setItem('background', 'yellow');
+    sessionStorage.setItem('background', 'yellow');
+    document.querySelector('.header').setAttribute('style','background: yellow')
+  }
+
+});
+
+b_green.addEventListener('click', (e) => {
+  e.preventDefault();
+  if(localStorage.getItem('bacground')!== "green") {
+    localStorage.clear();
+    localStorage.setItem('background', 'green');
+    sessionStorage.setItem('background', 'geen');
+    document.querySelector('.header').setAttribute('style','background: green')
+  }
+
+});
+
+b_clear.addEventListener('click', (e) => {
+  e.preventDefault();
+  if(localStorage.getItem('background')) {
+    localStorage.clear();
+    sessionStorage.clear();
+    document.querySelector('.header').setAttribute('style','background: #fff')
+  }
+});
 

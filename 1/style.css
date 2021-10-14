@@ -345,3 +345,9 @@ th {
 .focus {
   border: 3px solid red;
 }
+
+#back {
+  position: sticky;
+  bottom: 5%;
+  left: 90%;
+}
