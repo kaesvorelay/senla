@@ -210,30 +210,30 @@ b_clear.addEventListener('click', (e) => {
 
 // seventh iteratiom 
 
-let wrap = document.querySelector('.wrap');
+const wrap = document.querySelector('.wrap');
 const searchBtn1 = document.querySelector('#search1');
 const searchBtn2 = document.querySelector('#search2');
 
-searchBtn1.addEventListener('click', GetUser)
+searchBtn1.addEventListener('click', getUser)
 searchBtn2.addEventListener('click', getFetch)
 
-async function GetUser() {
+async function getUser() {
   try{
-    let getRepVal = document.querySelector('#input-rep').value;
-    let url = `https://api.github.com/users/${getRepVal}/repos`;
+    const getRepVal = document.querySelector('#input-rep').value;
+    const url = `https://api.github.com/users/${getRepVal}/repos`;
 
-    let response = await fetch(url);
-    let us = await response.json();
+    const response = await fetch(url);
+    const us = await response.json();
     
-    let allRepos = document.createElement('p');
+    const allRepos = document.createElement('p');
       allRepos.textContent = `number of rep ${us.length}`;
       wrap.append(allRepos);
 
-    let repName = document.createElement('p');
+      const repName = document.createElement('p');
       repName.textContent = `Rep name: ${us[0].name}`
       wrap.append(repName);
 
-    let authorName = document.createElement('p');
+      const authorName = document.createElement('p');
       authorName.textContent = `Fullname: ${us[0].full_name}`;
       wrap.append(authorName)
   } catch(err) {
@@ -241,26 +241,26 @@ async function GetUser() {
   }
 }
 
-function abc(data){
-  let allRepos = document.createElement('p');
+function creatEl(data){
+  const allRepos = document.createElement('p');
   allRepos.textContent = `number of rep ${data.length}`;
   wrap.append(allRepos);
 
-  let repName = document.createElement('p');
+  const repName = document.createElement('p');
   repName.textContent = `Rep name: ${data[0].name}`
   wrap.append(repName);
 
-  let authorName = document.createElement('p');
+  const authorName = document.createElement('p');
   authorName.textContent = `Fullname: ${data[0].full_name}`;
   wrap.append(authorName)
 }
 function getFetch() {
-  let getRepVal = document.querySelector('#input-rep').value;
-  let url = `https://api.github.com/users/${getRepVal}/repos`;
+  const getRepVal = document.querySelector('#input-rep').value;
+  const url = `https://api.github.com/users/${getRepVal}/repos`;
 
   fetch(url)
     .then(data => data.json())
-    .then(data => abc(data))
+    .then(data => creatEl(data))
     .catch(e => alert(e.message))
 }
 
