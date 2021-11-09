@@ -1,3 +1,6 @@
+import "./style.css";
+import "./cat.png"
+
 let btn = document.querySelector('.test-js-button');
 try {
   btn.addEventListener('click', function(){
@@ -64,11 +67,11 @@ class User {
       this.tel = arg[3];
   }
 
-  [Symbol.iterator] = function* () {
-    for (let i in this) {
-      yield this[i];
-    }
-  }
+  // [Symbol.iterator] = function *() {
+  //   for (let i in this) {
+  //     yield this[i];
+  //   }
+  // }
 
   sayHello() {
     return `${this.firstName} ${this.lastName}`
@@ -125,7 +128,7 @@ btnReg.addEventListener('click', function(e) {
 let i;
 
 function getAllUsers(i=0) {
-  for (; i < userList.users.length; i++) {
+  for (let i=0; i < userList.users.length; i++) {
     console.log(userList.getAllinfo.call(userList.users[i]));
   }
 };
