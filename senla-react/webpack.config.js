@@ -14,7 +14,7 @@ const filename = (ext) => isDev ? `[name].${ext}` : `[name].[contenthash].${ext}
 
 module.exports = {
   entry: '../1/main.js',
-  mode: 'development', 
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development', 
   output: { 
     filename: `./${filename('js')}` ,
     path: path.resolve(__dirname, 'build')
@@ -28,13 +28,13 @@ module.exports = {
       },
       {
         test: /\.css$/, 
-        use: ['style-loader','css-loader']
+        use: [MiniCssExtractPlugin.loader,'css-loader']
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
         loader: 'file-loader',
         options: {
-          name: 'cat.png'
+          name: '[name].[ext]'
         }
       },
       {
@@ -54,6 +54,9 @@ module.exports = {
           collapseWhitespace: isProd,
       }
   }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: `./${filename('css')}`
+  })
   ]
 }
