@@ -4,36 +4,31 @@ import kitty from '../kitty.png'
 class Footer extends React.Component {
   constructor(props) {
     super(props);
-    this.redBg = this.redBg.bind(this);
-    this.yellowBg = this.yellowBg.bind(this);
-    this.greenBg = this.greenBg.bind(this);
-    this.clearBg = this.clearBg.bind(this);
+    // this.redBg = this.redBg.bind(this);
+    // this.yellowBg = this.yellowBg.bind(this);
+    // this.greenBg = this.greenBg.bind(this);
+    // this.clearBg = this.clearBg.bind(this);
+    this.changeColor = this.changeColor.bind(this)
   }
 
-  redBg(){
-    this.props.onRed({
-      red: false
-    })
-  }
-
-  yellowBg(){
-    this.props.onYellow({
-      yellow: false
-    })
-    console.log(this.props)
-  }
-
-  greenBg(){
-    this.props.onGreen({
-      green: false
-    })
-    console.log(this.props)
-  }
-
-  clearBg() {
-    this.props.onClear({
-      clear: true
-    })
+  changeColor(col) {
+    if(col === "isRed") {
+      this.props.onRed({
+        red: false
+      })
+    } else if (col === "isYellow") {
+      this.props.onYellow({
+        yellow: false
+      })
+    } else if (col === "isGreen") {
+      this.props.onGreen({
+        greem: false
+      })
+    } else if (col === "clear") {
+      this.props.onClear({
+        clear: true
+      })
+    }
   }
 
   render() {
@@ -84,10 +79,10 @@ class Footer extends React.Component {
           A little cat asks you to smile
         </figcaption>
       </figure>
-      <button onClick={this.redBg} id="background-red">Red</button>
-      <button onClick={this.yellowBg} id="background-yellow">yellow</button>
-      <button onClick={this.greenBg} id="background-green">green</button>
-      <button onClick={this.clearBg} id="clear-background">clear</button>
+      <button onClick={()=>this.changeColor("isRed")} id="background-red">Red</button>
+      <button onClick={()=>this.changeColor("isYellow")} id="background-yellow">yellow</button>
+      <button onClick={()=>this.changeColor("isGreen")} id="background-green">green</button>
+      <button onClick={()=>this.changeColor("clear")} id="clear-background">clear</button>
     </footer>
     )
   }
