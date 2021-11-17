@@ -1,5 +1,5 @@
-import "./style.css";
-import "./cat.png"
+// import "./style.css";
+// import "./cat.png"
 
 let btn = document.querySelector('.test-js-button');
 try {
@@ -28,7 +28,7 @@ try {
 
 let p = document.querySelector('.test-js');
 
-let title = document.querySelector('.header-tittle')
+let title = document.querySelector('.header-title')
 
 let input = document.querySelectorAll('input')
 
@@ -67,11 +67,11 @@ class User {
       this.tel = arg[3];
   }
 
-  // [Symbol.iterator] = function *() {
-  //   for (let i in this) {
-  //     yield this[i];
-  //   }
-  // }
+  [Symbol.iterator] = function *() {
+    for (let i in this) {
+      yield this[i];
+    }
+  }
 
   sayHello() {
     return `${this.firstName} ${this.lastName}`
@@ -106,7 +106,6 @@ btnReg.addEventListener('click', function(e) {
   let lastName = document.querySelector('#lastname').value;
   let email = document.querySelector('#email').value;
   let tel = document.querySelector('#tel').value;
-  debugger;
 
   let arrayUser = [firstName, lastName, email, tel]
 
@@ -125,9 +124,8 @@ btnReg.addEventListener('click', function(e) {
   document.cookie = `email=${email}; expires=${expires}; path=/`;
 })
 
-let i;
 
-function getAllUsers(i=0) {
+function getAllUsers() {
   for (let i=0; i < userList.users.length; i++) {
     console.log(userList.getAllinfo.call(userList.users[i]));
   }

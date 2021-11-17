@@ -1,11 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import App from './App';
+import SecondPage from './Pages/second-page'
 
 
 
 ReactDOM.render(
-  <App />,
+  <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<App />}/>
+      <Route path='hello' element={<SecondPage/>}/>
+    </Routes> 
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

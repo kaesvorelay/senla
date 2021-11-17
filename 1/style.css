@@ -84,7 +84,7 @@ html {
 /* Header */
 
 
-.header-tittle {
+.header-title {
   margin-bottom: 20px;
   font-size: 3em;
   letter-spacing: 10px;
@@ -128,7 +128,7 @@ html {
   padding: 20px;
 }
 
-.section-tittle {
+.section-title {
   padding-left: 10%;
   letter-spacing: 3px;
   font-size: 1.7em;
@@ -222,7 +222,7 @@ html {
   padding: 20px;
 }
 
-.input-tittle {
+.input-title {
   display: block;
   margin-bottom: 10px;
   font-size: 1.2rem; 
@@ -281,7 +281,7 @@ html {
 
 /* footer */
 
-.footer-tittle {
+.footer-title {
   margin-bottom: 20px;
   text-align: center;
   letter-spacing: 3px;
