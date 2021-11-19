@@ -2,40 +2,6 @@ import React from 'react';
 import kitty from '../kitty.png';
 
 class Footer extends React.Component {
-  constructor(props) {
-    super(props);
-    // this.redBg = this.redBg.bind(this);
-    // this.yellowBg = this.yellowBg.bind(this);
-    // this.greenBg = this.greenBg.bind(this);
-    // this.clearBg = this.clearBg.bind(this);
-    // this.changeColor = this.changeColor.bind(this)
-    this.prp = this.prp.bind(this);
-  }
-  prp(a) {
-    let changeColor = this.props.color;
-    console.log(changeColor(a));
-  }
-
-  // changeColor(col) {
-  //   if(col === "isRed") {
-  //     this.props.onRed({
-  //       red: false
-  //     })
-  //   } else if (col === "isYellow") {
-  //     this.props.onYellow({
-  //       yellow: false
-  //     })
-  //   } else if (col === "isGreen") {
-  //     this.props.onGreen({
-  //       greem: false
-  //     })
-  //   } else if (col === "clear") {
-  //     this.props.onClear({
-  //       clear: true
-  //     })
-  //   }
-  // }
-
   render() {
     return (
       <footer className="footer">
