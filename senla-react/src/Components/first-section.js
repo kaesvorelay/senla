@@ -1,6 +1,38 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 
 import Block from './testing-castom-hook';
+import useInput from './useInput-hook';
+
+function SearchComponent() {
+  let val = useInput();
+  const [arr, setArr] = useState();
+  async function getRickAndMorty(val) {
+    const url = `https://rickandmortyapi.com/api/character/?name=${val.value}`;
+    let response = await fetch(url);
+    let arr = await response.json();
+    setArr(arr);
+    return arr;
+  }
+  const getMemFunc = useCallback(() => {
+    getRickAndMorty(val);
+  }, [val.value]);
+  return (
+    <div className="">
+      <div>
+        <input {...val} type="text" />
+        <button onClick={getMemFunc}>Send</button>
+      </div>
+      <p>
+        {arr &&
+          arr.results.map((item) => (
+            <li>
+              {item.name} {item.status}
+            </li>
+          ))}
+      </p>
+    </div>
+  );
+}
 
 class FirstSection extends React.Component {
   constructor(props) {
@@ -80,6 +112,7 @@ class FirstSection extends React.Component {
               this.state.arr.map((item) => <li>Fullname: {item.full_name}</li>)}
           </ul>
           <Block />
+          <SearchComponent />
         </div>
       </section>
     );
