@@ -1,9 +1,9 @@
 import '../style.css';
 import React from 'react';
-import Header from '../Components/header';
-import Main from '../Components/main';
-import Aside from '../Components/aside';
-import Footer from '../Components/footer';
+import Header from '../components/Header';
+import Main from '../components/Main';
+import Aside from '../components/Aside';
+import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 
 class All extends React.Component {

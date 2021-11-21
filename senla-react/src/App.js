@@ -1,15 +1,9 @@
 import './style.css';
-import React from 'react'
-import All from './Pages/first-page'
-
-
-
+import React from 'react';
+import All from './pages/First-page';
 
 function App() {
-  return (
-
-    <All />
-    )
+  return <All />;
 }
 
 export default App;

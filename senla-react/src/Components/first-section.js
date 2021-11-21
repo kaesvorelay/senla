@@ -1,21 +1,22 @@
 import React, { useCallback, useState } from 'react';
 
-import Block from './testing-castom-hook';
-import useInput from './useInput-hook';
+import Block from '../hooks/castomHook';
+import useInput from '../hooks/useHook';
 
 function SearchComponent() {
   let val = useInput();
-  const [arr, setArr] = useState();
-  async function getRickAndMorty(val) {
-    const url = `https://rickandmortyapi.com/api/character/?name=${val.value}`;
+  let namePers = val.value;
+  const [userReposArr, setUserReposArr] = useState();
+  async function getRickAndMorty(namePers) {
+    const url = `https://rickandmortyapi.com/api/character/?name=${namePers}`;
     let response = await fetch(url);
     let arr = await response.json();
-    setArr(arr);
+    setUserReposArr(arr);
     return arr;
   }
   const getMemFunc = useCallback(() => {
-    getRickAndMorty(val);
-  }, [val.value]);
+    getRickAndMorty(namePers);
+  }, [namePers]);
   return (
     <div className="">
       <div>
@@ -23,8 +24,8 @@ function SearchComponent() {
         <button onClick={getMemFunc}>Send</button>
       </div>
       <p>
-        {arr &&
-          arr.results.map((item) => (
+        {userReposArr &&
+          userReposArr.results.map((item) => (
             <li>
               {item.name} {item.status}
             </li>
@@ -40,6 +41,7 @@ class FirstSection extends React.Component {
     this.getGitHubUser = this.getGitHubUser.bind(this);
     this.getVal = this.getVal.bind(this);
     this.setVal = this.setVal.bind(this);
+    this.mergeFoo = this.mergeFoo.bind(this);
     this.state = {
       value: '',
       arr: []
@@ -49,6 +51,11 @@ class FirstSection extends React.Component {
   getVal(e) {
     e.preventDefault();
     this.setState({ value: e.target.value });
+  }
+
+  mergeFoo() {
+    this.setVal();
+    this.getGitHubUser();
   }
 
   setVal() {
@@ -95,11 +102,7 @@ class FirstSection extends React.Component {
             name="text"
             id="input-rep"
           />
-          <button
-            onClick={this.setVal}
-            onClick={this.getGitHubUser}
-            id="search1"
-          >
+          <button onClick={this.mergeFoo} id="search1">
             Async
           </button>
           <button id="search2">promis</button>

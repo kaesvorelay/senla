@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
 
 class Header extends React.Component {
   constructor(props) {
@@ -36,7 +35,7 @@ class Header extends React.Component {
         <nav className="nav">
           <ul className="nav-list">
             <li className="nav-list_link">
-              <NavLink to="/hello">html structure</NavLink>
+              <NavLink to="#">html structure</NavLink>
             </li>
             <li className="nav-list_link">
               <NavLink to="#">inputs</NavLink>

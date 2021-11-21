@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import useChild from './castom-hook';
+import useChild from './useEffectHook';
 
 function Block() {
   const [counter, setCounter] = useState(0);
