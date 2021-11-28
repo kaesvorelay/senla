@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 
 import Block from '../hooks/castomHook';
 import useInput from '../hooks/useHook';
+import Rick from '../components/Rick-block';
 
 function SearchComponent() {
   let val = useInput();
@@ -42,6 +43,7 @@ class FirstSection extends React.Component {
     this.getVal = this.getVal.bind(this);
     this.setVal = this.setVal.bind(this);
     this.mergeFoo = this.mergeFoo.bind(this);
+    this.foo = this.foo.bind(this);
     this.state = {
       value: '',
       arr: []
@@ -51,6 +53,14 @@ class FirstSection extends React.Component {
   getVal(e) {
     e.preventDefault();
     this.setState({ value: e.target.value });
+  }
+
+  componentDidMount() {
+    this.foo();
+  }
+
+  foo() {
+    this.setState({ value: 'kaesvorelay' });
   }
 
   mergeFoo() {
@@ -116,6 +126,7 @@ class FirstSection extends React.Component {
           </ul>
           <Block />
           <SearchComponent />
+          <Rick />
         </div>
       </section>
     );
