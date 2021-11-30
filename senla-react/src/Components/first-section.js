@@ -3,6 +3,7 @@ import React, { useCallback, useState } from 'react';
 import Block from '../hooks/castomHook';
 import useInput from '../hooks/useHook';
 import Rick from '../components/Rick-block';
+import StarWarsBlock from './StarWars-block';
 
 function SearchComponent() {
   let val = useInput();
@@ -127,6 +128,7 @@ class FirstSection extends React.Component {
           <Block />
           <SearchComponent />
           <Rick />
+          <StarWarsBlock />
         </div>
       </section>
     );

@@ -51,7 +51,7 @@ class Rick extends React.Component {
   }
 
   render() {
-    const { isLoaded, items, del } = this.state;
+    const { isLoaded, items } = this.state;
     if (!isLoaded) {
       return <p>Loading...</p>;
     } else {
