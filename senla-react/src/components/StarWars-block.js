@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function StarWarsBlock() {
   let [stateSW, setStateSW] = useState({
-    items: []
+    items: [],
   });
 
   let [count, setCount] = useState({ isPers: false });
 
   async function getPersSW() {
-    const response = await fetch('https://swapi.dev/api/people');
+    const response = await fetch("https://swapi.dev/api/people");
     const pars = await response.json();
     setStateSW({
-      items: pars.results
+      items: pars.results,
     });
   }
   async function getPlanetSW() {
-    const response = await fetch('https://swapi.dev/api/planets');
+    const response = await fetch("https://swapi.dev/api/planets");
     const pars = await response.json();
     setStateSW({
-      items: pars.results
+      items: pars.results,
     });
   }
 
@@ -40,7 +40,7 @@ function StarWarsBlock() {
           <li>{item.name}</li>
         ))}
       </ul>
-      <button onClick={toggleStateIsPeople}>Get planet</button>
+      <button onClick={toggleStateIsPeople}>Get pers from SW</button>
     </div>
   );
 }

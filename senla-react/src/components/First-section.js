@@ -1,9 +1,7 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState } from "react";
 
-import Block from '../hooks/castomHook';
-import useInput from '../hooks/useHook';
-import Rick from '../components/Rick-block';
-import StarWarsBlock from './StarWars-block';
+import useInput from "../hooks/useHook";
+import StarWarsBlock from "./StarWars-block";
 
 function SearchComponent() {
   let val = useInput();
@@ -21,6 +19,7 @@ function SearchComponent() {
   }, [namePers]);
   return (
     <div className="">
+      <h3>Get pers from Rick and Morty</h3>
       <div>
         <input {...val} type="text" />
         <button onClick={getMemFunc}>Send</button>
@@ -46,8 +45,8 @@ class FirstSection extends React.Component {
     this.mergeFoo = this.mergeFoo.bind(this);
     this.foo = this.foo.bind(this);
     this.state = {
-      value: '',
-      arr: []
+      value: "",
+      arr: [],
     };
   }
 
@@ -61,7 +60,7 @@ class FirstSection extends React.Component {
   }
 
   foo() {
-    this.setState({ value: 'kaesvorelay' });
+    this.setState({ value: "kaesvorelay" });
   }
 
   mergeFoo() {
@@ -88,19 +87,19 @@ class FirstSection extends React.Component {
       <section className="first-section">
         <h2 className="section-title">first section</h2>
         <p className="first-section_text">
-          <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit. Ea a,{' '}
+          <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit. Ea a,{" "}
           <i>voluptatum illo</i> vero nihil enim, harum incidunt deserunt
           voluptates cupiditate provident sint! Officiis amet nesciunt
           consectetur odio, debitis deleniti sapiente?
-          <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit. Ea a,{' '}
+          <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit. Ea a,{" "}
           <i>voluptatum illo</i> vero nihil enim, harum incidunt deserunt
           voluptates cupiditate provident sint! Officiis amet nesciunt
           consectetur odio, debitis deleniti sapiente?
-          <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit. Ea a,{' '}
+          <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit. Ea a,{" "}
           <i>voluptatum illo</i> vero nihil enim, harum incidunt deserunt
           voluptates cupiditate provident sint! Officiis amet nesciunt
           consectetur odio, debitis deleniti sapiente?
-          <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit. Ea a,{' '}
+          <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit. Ea a,{" "}
           <i>voluptatum illo</i> vero nihil enim, harum incidunt deserunt
           voluptates cupiditate provident sint! Officiis amet nesciunt
           consectetur odio, debitis deleniti sapiente?
@@ -125,9 +124,7 @@ class FirstSection extends React.Component {
             {this.state.arr &&
               this.state.arr.map((item) => <li>Fullname: {item.full_name}</li>)}
           </ul>
-          <Block />
           <SearchComponent />
-          <Rick />
           <StarWarsBlock />
         </div>
       </section>
