@@ -1,7 +1,18 @@
 import React from "react";
 
-class SecondSection extends React.Component {
-  constructor(props) {
+type MyProps = {
+  props: string;
+};
+
+interface MyState {
+  firstName?: string;
+  lastName?: string;
+  phoneNumb?: string;
+  email?: string;
+}
+
+class SecondSection extends React.Component<MyProps, MyState> {
+  constructor(props: MyProps) {
     super(props);
     this.state = {
       firstName: "",
@@ -16,23 +27,23 @@ class SecondSection extends React.Component {
     this.setUs = this.setUs.bind(this);
   }
 
-  getFirstName(e) {
+  getFirstName(e: React.ChangeEvent<HTMLInputElement>) {
     this.setState({ firstName: e.target.value });
   }
 
-  getLastName(e) {
+  getLastName(e: React.ChangeEvent<HTMLInputElement>) {
     this.setState({ lastName: e.target.value });
   }
 
-  getEmail(e) {
+  getEmail(e: React.ChangeEvent<HTMLInputElement>) {
     this.setState({ email: e.target.value });
   }
 
-  getPhoneNum(e) {
+  getPhoneNum(e: React.ChangeEvent<HTMLInputElement>) {
     this.setState({ phoneNumb: e.target.value });
   }
 
-  setUs(e) {
+  setUs(e: React.MouseEvent<HTMLInputElement>) {
     e.preventDefault();
     console.log(this.state);
   }
@@ -48,7 +59,6 @@ class SecondSection extends React.Component {
               Enter name
             </label>
             <input
-              value={this.state.firstName}
               onChange={this.getFirstName}
               className="input input_text"
               type="text"
@@ -60,7 +70,6 @@ class SecondSection extends React.Component {
               Enter lastname
             </label>
             <input
-              value={this.state.lastName}
               onChange={this.getLastName}
               className="input input_text"
               type="text"
@@ -72,7 +81,6 @@ class SecondSection extends React.Component {
               Your email
             </label>
             <input
-              value={this.state.email}
               onChange={this.getEmail}
               className="input input_text"
               type="email"
@@ -83,7 +91,6 @@ class SecondSection extends React.Component {
               Your telephone
             </label>
             <input
-              value={this.state.phoneNumb}
               onChange={this.getPhoneNum}
               className="input input_text"
               type="tel"

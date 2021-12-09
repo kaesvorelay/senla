@@ -3,11 +3,16 @@ import React, { useCallback, useState } from "react";
 import useInput from "../hooks/useHook";
 import StarWarsBlock from "./StarWars-block";
 
+type MyUserState = {
+  userReposArr?: string[];
+  results?: any;
+};
+
 function SearchComponent() {
   let val = useInput();
   let namePers = val.value;
-  const [userReposArr, setUserReposArr] = useState();
-  async function getRickAndMorty(namePers) {
+  const [userReposArr, setUserReposArr] = useState<MyUserState>();
+  async function getRickAndMorty(namePers: string) {
     const url = `https://rickandmortyapi.com/api/character/?name=${namePers}`;
     let response = await fetch(url);
     let arr = await response.json();
@@ -15,7 +20,7 @@ function SearchComponent() {
     return arr;
   }
   const getMemFunc = useCallback(() => {
-    getRickAndMorty(namePers);
+    getRickAndMorty(namePers!);
   }, [namePers]);
   return (
     <div className="">
@@ -26,7 +31,7 @@ function SearchComponent() {
       </div>
       <p>
         {userReposArr &&
-          userReposArr.results.map((item) => (
+          userReposArr.results.map((item: any) => (
             <li>
               {item.name} {item.status}
             </li>
@@ -36,8 +41,15 @@ function SearchComponent() {
   );
 }
 
-class FirstSection extends React.Component {
-  constructor(props) {
+type MyProps = {};
+
+type MyState = {
+  value?: string;
+  arr?: [];
+};
+
+class FirstSection extends React.Component<MyProps, MyState> {
+  constructor(props: MyProps) {
     super(props);
     this.getGitHubUser = this.getGitHubUser.bind(this);
     this.getVal = this.getVal.bind(this);
@@ -50,7 +62,7 @@ class FirstSection extends React.Component {
     };
   }
 
-  getVal(e) {
+  getVal(e: React.ChangeEvent<HTMLInputElement>) {
     e.preventDefault();
     this.setState({ value: e.target.value });
   }
@@ -63,7 +75,7 @@ class FirstSection extends React.Component {
     this.setState({ value: "kaesvorelay" });
   }
 
-  mergeFoo() {
+  mergeFoo(): void {
     this.setVal();
     this.getGitHubUser();
   }
@@ -74,12 +86,10 @@ class FirstSection extends React.Component {
   }
 
   async getGitHubUser() {
-    const url = `https://api.github.com/users/${this.setVal()}/repos`;
+    const url: string = `https://api.github.com/users/${this.setVal()}/repos`;
     const response = await fetch(url);
     const us = await response.json();
     this.setState({ arr: us });
-
-    return console.log(this.state.arr.lenght);
   }
 
   render() {
@@ -120,9 +130,11 @@ class FirstSection extends React.Component {
         <div>
           <ul>
             {this.state.arr &&
-              this.state.arr.map((item) => <li>Rep name: {item.name}</li>)}
+              this.state.arr.map((item: any) => <li>Rep name: {item.name}</li>)}
             {this.state.arr &&
-              this.state.arr.map((item) => <li>Fullname: {item.full_name}</li>)}
+              this.state.arr.map((item: any) => (
+                <li>Fullname: {item.full_name}</li>
+              ))}
           </ul>
           <SearchComponent />
           <StarWarsBlock />
