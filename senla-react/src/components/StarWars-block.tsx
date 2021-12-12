@@ -1,38 +1,44 @@
 import React, { useState, useEffect } from "react";
 
 type MyStateArrrayPers = {
-  items?: string[];
+  name: string;
 };
 
 type MyState = {
-  isPers?: boolean;
+  isPers: boolean;
 };
 
 function StarWarsBlock() {
-  let [stateSW, setStateSW] = useState<MyStateArrrayPers>({
-    items: [],
-  });
+  let [stateSW, setStateSW] = useState<MyStateArrrayPers[] | any>([]);
 
   let [count, setCount] = React.useState<MyState>({ isPers: false });
 
   function getPersSW(): void {
     fetch("https://swapi.dev/api/people")
       .then((data) => data.json())
+      .then((data) => data.results)
       .then((data) =>
-        setStateSW({
-          items: data.results,
-        })
-      );
+        setStateSW(
+          data.map((item: { name: string }) => ({
+            name: item.name,
+          }))
+        )
+      )
+      .catch((error) => alert(error.message));
   }
 
   function getPlanetSW(): void {
     fetch("https://swapi.dev/api/planets")
       .then((data) => data.json())
+      .then((data) => data.results)
       .then((data) =>
-        setStateSW({
-          items: data.results,
-        })
-      );
+        setStateSW(
+          data.map((item: { name: string }) => ({
+            name: item.name,
+          }))
+        )
+      )
+      .catch((error) => alert(error.message));
   }
 
   function toggleStateIsPeople() {
@@ -49,7 +55,7 @@ function StarWarsBlock() {
     <div>
       <ul>
         <h3>we use the methods of the function component lifecycle</h3>
-        {stateSW.items!.map((item: any) => (
+        {stateSW.map((item: { name: string }) => (
           <li>{item.name}</li>
         ))}
       </ul>

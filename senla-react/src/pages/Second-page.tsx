@@ -43,7 +43,7 @@ class Hello extends React.Component<MyProps, MyState> {
 
 class SecondPage extends React.Component<MyState, MyProps> {
   render() {
-    return <Hello render={(color: any) => <Welcome color={color} />} />;
+    return <Hello render={(color: string) => <Welcome color={color} />} />;
     <Outlet />;
   }
 }

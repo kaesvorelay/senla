@@ -5,10 +5,10 @@ type MyProps = {
 };
 
 interface MyState {
-  firstName?: string;
-  lastName?: string;
-  phoneNumb?: string;
-  email?: string;
+  firstName: string;
+  lastName: string;
+  phoneNumb: string;
+  email: string;
 }
 
 class SecondSection extends React.Component<MyProps, MyState> {

@@ -1,26 +1,36 @@
+import { link } from "fs";
 import React, { useCallback, useState } from "react";
 
 import useInput from "../hooks/useHook";
 import StarWarsBlock from "./StarWars-block";
 
-type MyUserState = {
-  userReposArr?: string[];
-  results?: any;
-};
+interface MyUserState {
+  name: string;
+  status: string;
+}
 
 function SearchComponent() {
   let val = useInput();
   let namePers = val.value;
-  const [userReposArr, setUserReposArr] = useState<MyUserState>();
-  async function getRickAndMorty(namePers: string) {
-    const url = `https://rickandmortyapi.com/api/character/?name=${namePers}`;
-    let response = await fetch(url);
-    let arr = await response.json();
-    setUserReposArr(arr);
-    return arr;
+  const [userReposArr, setUserReposArr] = useState<MyUserState[]>([]);
+
+  function getRickAndMorty() {
+    fetch(`https://rickandmortyapi.com/api/character/?name=${namePers}`)
+      .then((data) => data.json())
+      .then((data) => data.results)
+      .then((data) =>
+        setUserReposArr(
+          data.map((item: { name: string; status: string }) => ({
+            name: item.name,
+            status: item.status,
+          }))
+        )
+      )
+      .catch((error) => alert(error.message));
   }
+
   const getMemFunc = useCallback(() => {
-    getRickAndMorty(namePers!);
+    getRickAndMorty();
   }, [namePers]);
   return (
     <div className="">
@@ -29,14 +39,13 @@ function SearchComponent() {
         <input {...val} type="text" />
         <button onClick={getMemFunc}>Send</button>
       </div>
-      <p>
-        {userReposArr &&
-          userReposArr.results.map((item: any) => (
-            <li>
-              {item.name} {item.status}
-            </li>
-          ))}
-      </p>
+      <ul>
+        {userReposArr!.map((item: { name: string; status: string }) => (
+          <li>
+            {item.name} {item.status}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
@@ -44,8 +53,8 @@ function SearchComponent() {
 type MyProps = {};
 
 type MyState = {
-  value?: string;
-  arr?: [];
+  value: string;
+  arr: [];
 };
 
 class FirstSection extends React.Component<MyProps, MyState> {
@@ -130,9 +139,11 @@ class FirstSection extends React.Component<MyProps, MyState> {
         <div>
           <ul>
             {this.state.arr &&
-              this.state.arr.map((item: any) => <li>Rep name: {item.name}</li>)}
+              this.state.arr.map((item: { name: string }) => (
+                <li>Rep name: {item.name}</li>
+              ))}
             {this.state.arr &&
-              this.state.arr.map((item: any) => (
+              this.state.arr.map((item: { full_name: string }) => (
                 <li>Fullname: {item.full_name}</li>
               ))}
           </ul>
