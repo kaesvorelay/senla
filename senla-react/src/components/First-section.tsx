@@ -2,7 +2,9 @@ import { link } from "fs";
 import React, { useCallback, useState } from "react";
 
 import useInput from "../hooks/useHook";
+import useTheme from "../hooks/useTheme";
 import StarWarsBlock from "./StarWars-block";
+import UserList from "./userList";
 
 interface MyUserState {
   name: string;
@@ -32,6 +34,7 @@ function SearchComponent() {
   const getMemFunc = useCallback(() => {
     getRickAndMorty();
   }, [namePers]);
+
   return (
     <div className="">
       <h3>Get pers from Rick and Morty</h3>
@@ -149,6 +152,7 @@ class FirstSection extends React.Component<MyProps, MyState> {
           </ul>
           <SearchComponent />
           <StarWarsBlock />
+          <UserList />
         </div>
       </section>
     );
