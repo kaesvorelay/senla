@@ -1,10 +1,12 @@
 import { link } from "fs";
 import React, { useCallback, useState } from "react";
+import { Provider } from "react-redux";
 
 import useInput from "../hooks/useHook";
 import useTheme from "../hooks/useTheme";
 import StarWarsBlock from "./StarWars-block";
 import UserList from "./userList";
+import Counter from "./Counter";
 
 interface MyUserState {
   name: string;

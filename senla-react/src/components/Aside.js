@@ -1,4 +1,7 @@
 import React from "react";
+import { Provider } from "react-redux";
+import Counter from "./Counter";
+import { store } from "../store/reducers/counterReducer";
 
 class Aside extends React.Component {
   render() {
@@ -8,6 +11,9 @@ class Aside extends React.Component {
         sequi, neque omnis eum iste laudantium eius. Eveniet doloremque,
         temporibus minus odio delectus natus quisquam cupiditate hic tempora
         aspernatur alias?
+        <Provider store={store}>
+          <Counter />
+        </Provider>
       </aside>
     );
   }

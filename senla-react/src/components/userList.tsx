@@ -2,25 +2,34 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTypeSelector } from "../hooks/useTypeSelector";
 import { fetchUsers } from "../store/actions/user";
+import { connect } from "react-redux";
+import { IUsersState } from "../types/typesUsers";
 
-const UserList = () => {
-  const { users, error, loading } = useTypeSelector((state) => state.users);
+const UserList = (state: any) => {
+  let { users, loading, error } = state;
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchUsers());
   }, []);
   if (loading) {
-    <h1>Loading...</h1>;
+    return <h1>Loading...</h1>;
   } else if (error) {
-    <h1>{error}</h1>;
+    return <h1>{error}</h1>;
+  } else if (users.length > 2) {
+    return (
+      <div>
+        {users.map((user: any) => (
+          <div>{user.name}</div>
+        ))}
+      </div>
+    );
+  } else {
+    return <h2>Oooops</h2>;
   }
-  return (
-    <div>
-      {users.map((user) => (
-        <div>{user.name}</div>
-      ))}
-    </div>
-  );
 };
 
-export default UserList;
+const mapDispatchToProps = (state: IUsersState) => {
+  return state.users;
+};
+
+export default connect(mapDispatchToProps)(UserList);
